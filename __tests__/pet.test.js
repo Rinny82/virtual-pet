@@ -82,4 +82,54 @@ describe('constructor', () => {
     pet.walk();
     expect(pet.fitness).toEqual(10);
   });
+
+  it('feed decreases hunger by 3', () => {
+    const pet = new Pet('ChaCha');
+    pet.growUp();
+    pet.growUp();
+    pet.feed();
+    expect(pet.hunger).toEqual(7);
+  });
+
+  it('feed cannot decrease hunger < 0', () => {
+    const pet = new Pet('ChaCha');
+    pet.feed();
+    expect(pet.hunger).toEqual(0);
+  });
+
+  it('should return the pets demands', () => {
+    const pet = new Pet('ChaCha');
+    expect(pet.checkUp()).toEqual("I feel great!");
+  });
+
+  it('should return the pets demands ( food )', () => {
+    const pet = new Pet('ChaCha');
+    pet.growUp();
+    pet.growUp();
+    expect(pet.checkUp()).toEqual("I am hungry");
+  });
+
+  it('should return the pets demands ( walk )', () => {
+    const pet = new Pet('ChaCha');
+    pet.growUp();
+    pet.growUp();
+    pet.growUp();
+    pet.feed();
+    pet.feed();
+    pet.feed();
+    pet.feed();
+    expect(pet.checkUp()).toEqual("I need a walk");
+  });
+
+  it('should return the pets demands ( food & walk )', () => {
+    const pet = new Pet('ChaCha');
+    pet.growUp();
+    pet.growUp();
+    pet.growUp();
+    pet.feed();
+    pet.feed();
+    pet.feed();
+    expect(pet.checkUp()).toEqual("I am hungry AND I need a walk");
+  });
+
 });
