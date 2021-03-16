@@ -132,4 +132,15 @@ describe('constructor', () => {
     expect(pet.checkUp()).toEqual("I am hungry AND I need a walk");
   });
 
+  it('getter method returns a boolean', () => {
+    const pet = new Pet('ChaCha');
+    expect(pet.isAlive).toEqual(true);
+  });
+
+  it('getter method returns the other boolean', () => {
+    const pet = new Pet('ChaCha');
+    pet.growUp();
+    pet.growUp();
+    expect(pet.isAlive).toEqual(false);
+  });
 });
