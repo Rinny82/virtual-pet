@@ -34,13 +34,13 @@ describe('constructor', () => {
     expect(pet.hunger).toEqual(0);
   });
 
-  it('increases the pets hunger by 5', () => {
+  it('growUp increases the pets hunger by 5', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
     expect(pet.hunger).toEqual(5);
   });
 
-  it('increases the pets hunger to 20', () => {
+  it('growUps increases the pets hunger to 20', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
     pet.growUp();
@@ -54,13 +54,13 @@ describe('constructor', () => {
     expect(pet.fitness).toEqual(10);
   });
 
-  it('decreases the pets fitness by 3', () => {
+  it('growUp decreases the pets fitness by 3', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
     expect(pet.fitness).toEqual(7);
   });
 
-  it('decreases the pets fitness to 1', () => {
+  it('growUps decreases the pets fitness to 1', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
     pet.growUp();
@@ -68,4 +68,18 @@ describe('constructor', () => {
     expect(pet.fitness).toEqual(1);
   });
 
+  it('walk increases the pets fitness by 4', () => {
+    const pet = new Pet('ChaCha');
+    pet.growUp();
+    pet.growUp();
+    pet.walk();
+    expect(pet.fitness).toEqual(8);
+  });
+
+  it('walk cannot increase fitness > 10', () => {
+    const pet = new Pet('ChaCha');
+    pet.growUp();
+    pet.walk();
+    expect(pet.fitness).toEqual(10);
+  });
 });
