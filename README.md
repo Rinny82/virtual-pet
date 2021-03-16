@@ -1,3 +1,4 @@
+> ⚠️ **THIS REPO IS INCOMPLETE**: Be very careful here!
 <h1>JavaScript Virtual Pet 🐾</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
