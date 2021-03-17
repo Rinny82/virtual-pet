@@ -24,7 +24,9 @@ describe('constructor', () => {
   it('grows up to 3', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
+    pet.feed();
     pet.growUp();
+    pet.feed();
     pet.growUp();
     expect(pet.age).toEqual(3);
   });
@@ -40,14 +42,14 @@ describe('constructor', () => {
     expect(pet.hunger).toEqual(5);
   });
 
-  it('growUps increases the pets hunger to 20', () => {
-    const pet = new Pet('ChaCha');
-    pet.growUp();
-    pet.growUp();
-    pet.growUp();
-    pet.growUp();
-    expect(pet.hunger).toEqual(20);
-  });
+  // it('growUps increases the pets hunger to 20', () => {
+  //   const pet = new Pet('ChaCha');
+  //   pet.growUp();
+  //   pet.growUp();
+  //   pet.growUp();
+  //   pet.growUp();
+  //   expect(pet.hunger).toEqual(20);
+  // });
 
   it('initial fitness should be 10', () => {
     const pet = new Pet('ChaCha');
@@ -63,7 +65,9 @@ describe('constructor', () => {
   it('growUps decreases the pets fitness to 1', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
+    pet.feed();
     pet.growUp();
+    pet.feed();
     pet.growUp();
     expect(pet.fitness).toEqual(1);
   });
@@ -71,6 +75,7 @@ describe('constructor', () => {
   it('walk increases the pets fitness by 4', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
+    pet.feed();
     pet.growUp();
     pet.walk();
     expect(pet.fitness).toEqual(8);
@@ -86,9 +91,8 @@ describe('constructor', () => {
   it('feed decreases hunger by 3', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
-    pet.growUp();
     pet.feed();
-    expect(pet.hunger).toEqual(7);
+    expect(pet.hunger).toEqual(2);
   });
 
   it('feed cannot decrease hunger < 0', () => {
@@ -105,6 +109,7 @@ describe('constructor', () => {
   it('should return the pets demands ( food )', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
+    pet.feed();
     pet.growUp();
     expect(pet.checkUp()).toEqual("I am hungry");
   });
@@ -112,10 +117,10 @@ describe('constructor', () => {
   it('should return the pets demands ( walk )', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
-    pet.growUp();
+    pet.feed();
     pet.growUp();
     pet.feed();
-    pet.feed();
+    pet.growUp();
     pet.feed();
     pet.feed();
     expect(pet.checkUp()).toEqual("I need a walk");
@@ -124,11 +129,10 @@ describe('constructor', () => {
   it('should return the pets demands ( food & walk )', () => {
     const pet = new Pet('ChaCha');
     pet.growUp();
+    pet.feed();
     pet.growUp();
+    pet.feed();
     pet.growUp();
-    pet.feed();
-    pet.feed();
-    pet.feed();
     expect(pet.checkUp()).toEqual("I am hungry AND I need a walk");
   });
 
