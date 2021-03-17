@@ -1,4 +1,3 @@
-> ⚠️ **THIS REPO IS INCOMPLETE**: Be very careful here!
 <h1>JavaScript Virtual Pet 🐾</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
@@ -22,6 +21,66 @@
 ```sh
 npm install
 ```
+
+## Get a Pet
+> We will use Node REPL ( Node Shell ) in this example.
+From the project directory :
+### Enter node shell.
+```sh
+node
+```
+### Import the Pet constructor.
+```sh
+const Pet = require("./src/pet")
+```
+### Create your pet. 
+*in this example im storing the pet in a variable called **Doge** and naming the pet **Dean***
+```sh
+const Doge = new Pet('Dean')
+```
+## Congratulations ! You now have a real life JavaScript pet. 
+
+### Check your pet is ok and see if it needs anything. 
+
+```sh
+Doge.checkUp()
+```
+### You can satisfy your pets needs with the following. 
+
+```sh
+Doge.feed()
+```
+or 
+```sh
+Doge.walk()
+```
+### The power of JavaScript allows you to increase the age of yout pet. 
+
+```sh
+Doge.growUp()
+```
+
+> ⚠️ **Be very careful here! Pet can haz too many feed and walk and such age!**
+
+-   Pet cannot live past the age of 30 !
+-   If pet fitness drops to 0, pet bites the dust !
+-   If pet hunger reaches 10, pet is done for !
+
+### You can check the individual stats of your Pet.
+
+```sh
+Doge.age
+```
+```sh
+Doge.fitness
+```
+```sh
+Doge.hunger
+```
+```sh
+Doge.isAlive
+```
+***
 
 ## Run tests
 
