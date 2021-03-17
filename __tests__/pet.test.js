@@ -35,10 +35,10 @@ describe("age & growUp", () => {
     expect(pet.age).toEqual(3);
   });
 
-  it('throws an error if the pet is not alive', () => {
-    const pet = new Pet('ChaCha');
+  it("throws an error if the pet is not alive", () => {
+    const pet = new Pet("ChaCha");
     pet.age = 30;
-    expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
+    expect(() => pet.growUp()).toThrow("Your pet is no longer alive :(");
   });
 });
 
@@ -77,7 +77,6 @@ describe("fitness", () => {
     expect(pet.fitness).toEqual(7);
   });
 
-
   it("walk increases the pets fitness by 4", () => {
     const pet = new Pet("ChaCha");
     pet.fitness = 4;
@@ -92,10 +91,10 @@ describe("fitness", () => {
     expect(pet.fitness).toEqual(10);
   });
 
-  it('throws an error if the pet is not alive', () => {
-    const pet = new Pet('ChaCha');
+  it("throws an error if the pet is not alive", () => {
+    const pet = new Pet("ChaCha");
     pet.age = 30;
-    expect(() => pet.walk()).toThrow('Your pet is no longer alive :(');
+    expect(() => pet.walk()).toThrow("Your pet is no longer alive :(");
   });
 });
 
@@ -113,10 +112,10 @@ describe("feed", () => {
     expect(pet.hunger).toEqual(0);
   });
 
-  it('throws an error if the pet is not alive', () => {
-    const pet = new Pet('ChaCha');
+  it("throws an error if the pet is not alive", () => {
+    const pet = new Pet("ChaCha");
     pet.age = 30;
-    expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
+    expect(() => pet.feed()).toThrow("Your pet is no longer alive :(");
   });
 });
 
@@ -147,10 +146,10 @@ describe("checkUp", () => {
     expect(pet.checkUp()).toEqual("I am hungry AND I need a walk");
   });
 
-  it('throws an error if the pet is not alive', () => {
-    const pet = new Pet('ChaCha');
+  it("should return the pets fate (death)", () => {
+    const pet = new Pet("ChaCha");
     pet.age = 30;
-    expect(() => pet.checkUp()).toThrow('Your pet is no longer alive :(');
+    expect(pet.checkUp()).toEqual("Your pet is no longer alive :(");
   });
 });
 
