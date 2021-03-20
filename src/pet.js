@@ -4,10 +4,14 @@ const MIN_HUNGER = 0;
 const MAX_HUNGER = 10;
 const MAX_AGE = 30;
 function Pet(name) {
+  if (typeof name != "string")
+  { throw new Error("You must provide a name for the pet"); }
+  else { this.name = name; }
   this.name = name;
   this.age = 0;
   this.hunger = 0;
   this.fitness = 10;
+  this.children = [];
 }
 
 Pet.prototype = {
@@ -23,6 +27,16 @@ Pet.prototype = {
     }
     return true;
   },
+};
+
+Pet.prototype.adoptChild = function (child) {
+    if (typeof child === "object") {
+      this.children.push(child);
+    }
+};
+
+Pet.prototype.haveBaby = function (name) {
+  this.children.push(new Pet(name));
 };
 
 Pet.prototype.growUp = function () {
@@ -71,5 +85,6 @@ Pet.prototype.checkUp = function () {
   }
   return "I feel great!";
 };
+
 
 module.exports = Pet;

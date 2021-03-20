@@ -165,3 +165,39 @@ describe("isAlive", () => {
     expect(pet.isAlive).toEqual(false);
   });
 });
+
+describe("adoptChild", () => {
+  it("can adopt a child", () => {
+    const parent = new Pet("ChaCha");
+    const child = new Pet("Cha");
+    parent.adoptChild(child);
+    expect(parent.children).toEqual([
+      { name: "Cha", age: 0, hunger: 0, fitness: 10, children: [] },
+    ]);
+  });
+  it("can feed a child", () => {
+    const parent = new Pet("ChaCha");
+    const child = new Pet("Cha");
+    child.hunger = 5;
+    parent.adoptChild(child);
+    parent.children[0].feed();
+    expect(child.hunger).toEqual(2);
+  });
+});
+
+describe("haveBaby", () => {
+  it("can have a child", () => {
+    const parent = new Pet("ChaCha");
+    parent.haveBaby('Cha');
+    expect(parent.children).toEqual([
+      { name: "Cha", age: 0, hunger: 0, fitness: 10, children: [] },
+    ]);
+  });
+  it("can feed a child", () => {
+    const parent = new Pet("ChaCha");
+    parent.haveBaby('Cha');
+    parent.children[0].hunger = 5;
+    parent.children[0].feed();
+    expect(parent.children[0].hunger).toEqual(2);
+  });
+});
