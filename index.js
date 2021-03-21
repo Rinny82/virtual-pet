@@ -2,8 +2,8 @@
 
 const idle = {start: 1254, end: 1672, offset: 209, interval: 2500}
 const feed = {start: 209*13, end: 209*19, offset: 209, interval: 500}
-const walk = {start: 1254, end: 1672, offset: 209, interval: 2500}
-const sleep = {start: 1254, end: 1672, offset: 209, interval: 2500}
+const walk = {start: 209*9, end: 209*10, offset: 209, interval: 500}
+const sleep = {start: 209*20, end: 209*21, offset: 209, interval: 1000}
 
 let tID; // clear the setInterval()
 function stopAnimate() {
@@ -30,10 +30,11 @@ function animateIdle(start, end, offset, interval) {
   }, interval); //end of setInterval
 } //end of animateIdle()
 
-function animateScript(start, end, offset, interval) {
+function animateScript(start, end, offset, interval, rotation) {
   stopAnimate()
   let position = start; 
-  
+  let count = 1; 
+  position = start;
   tID = setInterval(() => {
     document.getElementById(
       "sprite"
@@ -42,7 +43,10 @@ function animateScript(start, end, offset, interval) {
     if (position < end) {
       position = position + offset;
     }
-
+    else if ( count < rotation ) {
+      count++;
+      position = start;
+    }
     else {
       clearInterval(tID); 
       animateIdle(idle.start,idle.end,idle.offset,idle.interval);
@@ -60,7 +64,13 @@ window.onmousedown = e => {
   console.log(buttonId)
   document.getElementById(buttonId).classList.add("button-down");
   if ( buttonId === 'feed'){
-    animateScript(feed.start,feed.end,feed.offset,feed.interval)
+    animateScript(feed.start,feed.end,feed.offset,feed.interval,1)
+  }
+  if ( buttonId === 'walk'){
+    animateScript(walk.start,walk.end,walk.offset,walk.interval,10)
+  }
+  if ( buttonId === 'sleep'){
+    animateScript(sleep.start,sleep.end,sleep.offset,sleep.interval,10)
   }
 } 
 
