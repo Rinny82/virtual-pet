@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --primary: #242424;
+  --secondary: #f2f2f2;
+  --week: #cecdcd;
+  --accent: #4c00ff;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #E8E1DC;
+  background:  radial-gradient(86.54% 56.35% at 50% 66.55%, #E8E1DC 36.89%, #BCB6B2 100%);
+  display: flex;
+  overflow: hidden;
+  /* flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center; */
+  width: 100vw;
+  height: 100vh;  
+}
+#container{
+  width: 650px;
+  height: 680px;
+  overflow: hidden;
+  position: relative;
+  background: url('./assets/img/egg.svg');
+  transform: scale(0.5);
+}
+
+#sprite{
+  position: absolute;
+  background: url('./assets/img/spriteSheet.png') 0px 0px;
+  width: 237px;
+  height: 209px;
+  top: 202px;
+  left: 206px;
+}
+
+.button{
+  position: absolute;
+  background: url('./assets/img/buttons.png') 0px 0px;
+  width: 50px;
+  height: 55px;
+}
+
+.button-down{
+  background: url('./assets/img/buttons.png') 0px -55px;
+}
+
+.feed{
+  top: 456px;
+  left: 184px;
+}
+
+.walk{
+  left: 265px;
+  top: 484px;
+}
+
+.sleep{
+  left: 345px;
+  top: 484px;
+}
+
+.info{
+  left: 422px;
+  top: 456px;
+}
