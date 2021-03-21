@@ -1,7 +1,6 @@
 <h1>JavaScript Virtual Pet 🐾</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
-
 </p>
 
 > Real pets are great, but they do have drawbacks. They smell. Your mum might be allergic to them. Maybe you just aren't allowed one in your flat. JavaScript pets are great. Because they're made of JavaScript, they can do literally anything, and they don't have any of the drawbacks of regular pets.
@@ -16,6 +15,7 @@
 -   If your pet gets too hungry or unfit, it will DIE
 -   If your pet gets to 30 days old it will DIE
 
+ ## Experimental Tamagotchi UI [here](https://pixeljuggle.github.io/virtual-pet/)
 ## Install
 
 ```sh
@@ -94,7 +94,6 @@ npm test
 
 * Github: [@pixeljuggle](https://github.com/pixeljuggle)
 * Github: [@MCRcodes](https://github.com/MCRcodes)
-
 
 ## Show your support
 
