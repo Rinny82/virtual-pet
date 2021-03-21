@@ -16,10 +16,10 @@ body {
   background:  radial-gradient(86.54% 56.35% at 50% 66.55%, #E8E1DC 36.89%, #BCB6B2 100%);
   display: flex;
   overflow: hidden;
-  /* flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  align-content: center; */
+  align-content: center;
   width: 100vw;
   height: 100vh;  
 }
@@ -27,7 +27,7 @@ body {
   width: 650px;
   height: 680px;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   background: url('./assets/img/egg.svg');
   transform: scale(0.5);
 }
